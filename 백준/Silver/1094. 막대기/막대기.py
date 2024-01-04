@@ -1,13 +1,12 @@
 x = int(input())
-stick = [64, 32, 16, 8, 4, 2, 1]
-count = 0
+stick = 64
+result = 0
 
-for i in range(len(stick)):
-    if x >= stick[i]:
-        count += 1
-        x -= stick[i]
+while x > 0:
+    if x >= stick:
+        result += 1
+        x -= stick
+    else:
+        stick = stick // 2
 
-    if x == 0:
-        break
-
-print(count)
+print(result)
